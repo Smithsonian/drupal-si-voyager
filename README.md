@@ -10,23 +10,23 @@ Before you begin, ensure the SI Voyager module is installed and enabled on your 
 
 The SI Voyager module can be installed via Composer, which is the recommended way to manage Drupal dependencies. To install the module, you need to add the custom repository for the module and then require it using Composer.
 
-### Adding Repositories to Composer
+## Installing SI Voyager Module
 
-Open your `composer.json` file located at the root of your Drupal project and add the following repository configurations under the `repositories` key:
+The SI Voyager module can be installed via Composer, which is the recommended way to manage Drupal dependencies. For Composer to recognize and correctly install the module, you must specify the project as `smithsonian/si_voyager` and define its type as `drupal-module` in the module's `composer.json` file.
+
+### Preparing the Module's composer.json
+
+Ensure your module's `composer.json` file includes the following key definitions:
 
 ```json
 {
-  "repositories": [
-    {
-      "type": "composer",
-      "url": "https://packages.drupal.org/10"
-    },
-    {
-      "type": "git",
-      "url": "git@github.com:smithsonian/si_voyager.git"
-    }
-  ]
+  "name": "smithsonian/si_voyager",
+  "type": "drupal-module",
+  "require": {
+    "composer/installers": "^1.2"
+  }
 }
+
 ```
 
 ### Adding a 3D Model
