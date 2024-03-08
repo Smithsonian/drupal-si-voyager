@@ -1,0 +1,11 @@
+media.source.si_voyager_viewer:
+  type: media.source.field_aware
+  label: 'SI Voyager media source configuration'
+
+field.formatter.settings.si_voyager_viewer:
+  type: mapping
+  label: 'SI Voyager display format settings'
+  mapping:
+    formatter_class:
+      type: string
+      label: 'Formatter class name'

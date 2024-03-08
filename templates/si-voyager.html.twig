@@ -1,0 +1,15 @@
+{#
+/**
+ * @file
+ * Template implementation for the si_voyager theme hook.
+ *
+ * Available variables:
+ * - si_voyager_id: (string) ID of the scan.
+    * - no_thumbnail_url: (string) URL of the thumbnail.
+ */
+#}
+
+{% if no_thumbnail_url %}
+    <img class="no_thumbnail" src="{{ no_thumbnail_url }}" alt="No Thumbnail" />
+{% endif %}
+<div data-3d="{{ si_voyager_id }}" id="voyager__wrapper-{{ si_voyager_id }}" class="voyager-explorer"></div>

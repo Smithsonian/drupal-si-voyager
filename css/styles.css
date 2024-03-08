@@ -1,0 +1,16 @@
+.no_thumbnail {
+  display: none;
+}
+
+.voyager-explorer {
+  height: 150px;
+  overflow: hidden;
+  width: 200px;
+}
+
+.voyager-explorer .voyager {
+  display: block;
+  height: 150px;
+  position: relative;
+  width: 200px;
+}

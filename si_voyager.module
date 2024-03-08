@@ -1,0 +1,15 @@
+<?php
+
+/**
+ * Implements hook_theme().
+ */
+function si_voyager_theme($existing, $type, $theme, $path) {
+    return [
+        'si_voyager' => [
+            'variables' => [
+                'si_voyager_id' => NULL,
+                'no_thumbnail_url' => FALSE,
+            ],
+        ],
+    ];
+}
