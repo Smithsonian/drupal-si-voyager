@@ -20,13 +20,17 @@ Ensure your module's `composer.json` file includes the following key definitions
 
 ```json
 {
-  "name": "smithsonian/si_voyager",
-  "type": "drupal-module",
-  "require": {
-    "composer/installers": "^1.2"
-  }
+  "repositories": [
+    {
+      "type": "composer",
+      "url": "https://packages.drupal.org/10"
+    },
+    {
+      "type": "git",
+      "url": "git@github.com:smithsonian/si_voyager.git"
+    }
+  ]
 }
-
 ```
 
 ### Adding a 3D Model
