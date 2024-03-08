@@ -10,7 +10,7 @@ Before you begin, ensure the SI Voyager module is installed and enabled on your 
 
 The SI Voyager module can be installed via Composer, which is the recommended way to manage Drupal dependencies. To install the module, you need to add the custom repository for the module and then require it using Composer.
 
-Open your `composer.json` file located at the root of your Drupal project and add the following repository configurations under the `repositories` key:
+1. Add an entry for the Smithsonian/si_video Github repository to the repositories section in your composer.json file:
 
 ```json
 {
@@ -26,7 +26,9 @@ Open your `composer.json` file located at the root of your Drupal project and ad
   ]
 }
 ```
-```
+
+2. Then, require the project using the master branch via the following command: composer require "smithsonian/si_voyager:dev-main"
+3. Finally, enable the module via drush or the Extend menu in the Drupal Admin.
 
 ### Adding a 3D Model
 
