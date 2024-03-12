@@ -29,15 +29,14 @@ class SIVoyagerFormatter extends FormatterBase {
             // Prepare the content or any data you want to pass to the template.
             // Use your theme hook, and pass variables to the template.
 
+            $uuid = SiVoyagerUtility::extractUuidFromUrl($item->value);
+
             // Test if the entity is embedded and being edited in CKEDITOR
             if (isset($_GET['text'])) {
-//                ray($item->value . '/scene-image-thumb.jpg');
-                $scene_image = $item->value . '/scene-image-thumb.jpg';
+                $scene_image = 'https://3d-api.si.edu/content/document/3d_package:' . $uuid . '/scene-image-thumb.jpg';
             } else {
                 $scene_image = NULL;
             }
-
-            $uuid = SiVoyagerUtility::extractUuidFromUrl($item->value);
 
             $elements[$delta] = [
                 '#theme' => 'si_voyager',
