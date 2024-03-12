@@ -8,7 +8,7 @@ function si_voyager_theme($existing, $type, $theme, $path) {
         'si_voyager' => [
             'variables' => [
                 'si_voyager_id' => NULL,
-                'no_thumbnail_url' => FALSE,
+                'scene_image' => FALSE,
             ],
         ],
     ];
