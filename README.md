@@ -27,7 +27,7 @@ The SI Voyager module can be installed via Composer, which is the recommended wa
 }
 ```
 
-2. Then, require the project using the master branch via the following command: composer require "smithsonian/si_voyager:dev-main"
+2. Then, require the project using the master branch via the following command: composer require "smithsonian/si_voyager"
 3. Finally, enable the module via drush or the Extend menu in the Drupal Admin.
 
 ### Adding a 3D Model
