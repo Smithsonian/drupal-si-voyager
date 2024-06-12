@@ -24,10 +24,7 @@ class ValidUuidConstraintValidator extends ConstraintValidator {
                 $this->context->buildViolation($constraint->notValidUuidMessage)
                     ->atPath($item->getFieldDefinition()->getName())
                     ->addViolation();
-            } else {
-                ray($uuid);
             }
-
 
 //            if (!empty($item->value) && !preg_match('/^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i', $item->value)) {
 //                $this->context->buildViolation($constraint->notValidUuidMessage)

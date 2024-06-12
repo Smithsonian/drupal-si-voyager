@@ -50,8 +50,6 @@ class SIVoyagerFormatter extends FormatterBase {
             ];
         }
 
-//        ray($elements);
-
         return $elements;
     }
 }
