@@ -9,3 +9,24 @@ field.formatter.settings.si_voyager_viewer:
     formatter_class:
       type: string
       label: 'Formatter class name'
+    show_title:
+      type: boolean
+      label: 'Show the scene title'
+    show_logo:
+      type: boolean
+      label: 'Show the SI Voyager logo'
+    show_menu:
+      type: boolean
+      label: 'Show the viewer menu'
+    show_help:
+      type: boolean
+      label: 'Show the "help" button'
+    bg_style:
+      type: string
+      label: 'Background style'
+    bg_color:
+      type: string
+      label: 'Background color'
+    aspect_ratio:
+      type: string
+      label: 'Aspect ratio'

@@ -1,4 +1,4 @@
-.voyager-explorer {
+/* .voyager-explorer {
   position: relative;
   height: 0;
   overflow: hidden;
@@ -6,4 +6,37 @@
   margin-top: 10px;
   margin-bottom: 25px;
   width: 100%;
+} */
+
+.si-voyager-explorer-container {
+  display: flex;
+  display: block;
+  width: 100%;
+  flex-shrink: 0;
+  scroll-snap-align: center;
+  align-items: flex-start;
+  justify-content: center;
 }
+
+.si-voyager-explorer {
+  display: flex;
+  aspect-ratio: auto;
+  width: 100%;
+}
+
+.si-voyager-explorer.aspect-widescreen {
+  aspect-ratio: 16 / 9;
+}
+
+.si-voyager-explorer.aspect-square {
+  aspect-ratio: 1 / 1;
+}
+
+.si-voyager-explorer.aspect-fullscreen {
+  aspect-ratio: 4 / 3;
+}
+
+.si-voyager-explorer.aspect-mobile-portrait {
+  aspect-ratio: 9 / 16;
+}
+
