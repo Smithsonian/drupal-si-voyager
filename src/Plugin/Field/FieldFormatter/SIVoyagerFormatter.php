@@ -59,12 +59,18 @@ class SIVoyagerFormatter extends FormatterBase {
       $documentUrl = sprintf('%s/%s/', self::VOYAGER_BASE_DOCUMENT_URL, $uuid);
       $attributes = new Attribute(
         [
-          'root' => $documentUrl,
-          'document' => 'document.json',
-          'id' => 'voyager-component-' . $uuid,
           'class' => ['si-voyager-explorer'],
         ]
       );
+      $componentAttributes = new Attribute(
+        [
+          'root' => $documentUrl,
+          'document' => 'document.json',
+          'id' => 'voyager-component-' . $uuid,
+          'class' => ['si-voyager-explorer-component'],
+        ]
+      );
+
       // Set the UI elements to display in the viewer.
       // See: https://smithsonian.github.io/dpo-voyager/explorer/api/#ui-attributes for more information.
       $uiElements = ['none'];
@@ -81,14 +87,14 @@ class SIVoyagerFormatter extends FormatterBase {
         $uiElements[] = 'help';
       }
       $uiMode = implode("|", $uiElements);
-      $attributes->setAttribute('uimode', $uiMode);
+      $componentAttributes->setAttribute('uimode', $uiMode);
 
       if (!empty($formatterSettings['bg_style'])) {
-        $attributes->setAttribute('bgstyle', $formatterSettings['bg_style']);
+        $componentAttributes->setAttribute('bgstyle', $formatterSettings['bg_style']);
       }
 
       if (!empty($formatterSettings['bg_color'])) {
-        $attributes->setAttribute('bgcolor', trim($formatterSettings['bg_color']));
+        $componentAttributes->setAttribute('bgcolor', trim($formatterSettings['bg_color']));
       }
 
       // Set the class for the aspect ratio.
@@ -107,6 +113,7 @@ class SIVoyagerFormatter extends FormatterBase {
           '#theme' => 'si_voyager',
           '#si_voyager_id' => $uuid,
           '#scene_image' => $scene_image,
+          '#component_attributes' => $componentAttributes,
           '#attributes' => $attributes,
           '#attached' => [
               'library' => [

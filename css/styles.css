@@ -1,27 +1,23 @@
-/* .voyager-explorer {
+.si-voyager-explorer-wrapper {
   position: relative;
-  height: 0;
-  overflow: hidden;
-  padding-bottom: 56.25%;
-  margin-top: 10px;
-  margin-bottom: 25px;
-  width: 100%;
-} */
-
-.si-voyager-explorer-container {
   display: flex;
-  display: block;
   width: 100%;
   flex-shrink: 0;
   scroll-snap-align: center;
   align-items: flex-start;
   justify-content: center;
+  margin-inline: auto;
 }
 
 .si-voyager-explorer {
   display: flex;
+  justify-content: center;
   aspect-ratio: auto;
   width: 100%;
+}
+
+.si-voyager-explorer-component {
+  display: block;
 }
 
 .si-voyager-explorer.aspect-widescreen {
@@ -39,4 +35,3 @@
 .si-voyager-explorer.aspect-mobile-portrait {
   aspect-ratio: 9 / 16;
 }
-
