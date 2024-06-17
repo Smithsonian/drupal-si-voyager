@@ -4,9 +4,9 @@ namespace Drupal\si_voyager\Plugin\Field\FieldFormatter;
 
 use Drupal\Core\Field\FieldItemListInterface;
 use Drupal\Core\Field\FormatterBase;
-use Drupal\si_voyager\Utility\SiVoyagerUtility;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Template\Attribute;
+use Drupal\si_voyager\Utility\SiVoyagerUtility;
 
 /**
  * Plugin implementation of the 'si_voyager' formatter.
@@ -102,24 +102,25 @@ class SIVoyagerFormatter extends FormatterBase {
         $attributes->addClass($formatterSettings['aspect_ratio']);
       }
 
-      // Test if the entity is embedded and being edited in CKEDITOR
+      // Test if the entity is embedded and being edited in CKEDITOR.
       if (isset($_GET['text'])) {
         $scene_image = 'https://3d-api.si.edu/content/document/3d_package:' . $uuid . '/scene-image-thumb.jpg';
-      } else {
+      }
+      else {
         $scene_image = NULL;
       }
 
       $elements[$delta] = [
-          '#theme' => 'si_voyager',
-          '#si_voyager_id' => $uuid,
-          '#scene_image' => $scene_image,
-          '#component_attributes' => $componentAttributes,
-          '#attributes' => $attributes,
-          '#attached' => [
-              'library' => [
-                  'si_voyager/si_voyager_viewer',
-              ],
+        '#theme' => 'si_voyager',
+        '#si_voyager_id' => $uuid,
+        '#scene_image' => $scene_image,
+        '#component_attributes' => $componentAttributes,
+        '#attributes' => $attributes,
+        '#attached' => [
+          'library' => [
+            'si_voyager/si_voyager_viewer',
           ],
+        ],
       ];
     }
 
