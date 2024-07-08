@@ -1,12 +1,8 @@
 si_voyager_viewer:
   css:
     theme:
-      css/styles.css: { }
+      css/styles.css: {}
+      https://cdn.jsdelivr.net/gh/smithsonian/dpo-voyager@latest/assets/fonts/fonts.css: { type: external, minified: true }
   js:
-    js/embed_3d.js: {}
-    https://cdn.jsdelivr.net/npm/three@0.126.1/build/three.min.js: { type: external, minified: true }
     https://3d-api.si.edu/resources/js/voyager-explorer.min.js: { type: external, minified: true }
 
-
-
-#si_3d_viewer_scan

@@ -11,26 +11,26 @@ use Symfony\Component\Validator\ConstraintValidator;
  */
 class ValidUuidConstraintValidator extends ConstraintValidator {
 
-    /**
-     * {@inheritdoc}
-     */
-    public function validate($items, Constraint $constraint) {
-        foreach ($items as $item) {
-            // Now $item->value should be the string you want to validate.
+  /**
+   * {@inheritdoc}
+   */
+  public function validate($items, Constraint $constraint) {
+    foreach ($items as $item) {
+      // Now $item->value should be the string you want to validate.
+      $uuid = SiVoyagerUtility::extractUuidFromUrl($item->value);
 
-            $uuid = SiVoyagerUtility::extractUuidFromUrl($item->value);
+      if (!$uuid) {
+        $this->context->buildViolation($constraint->notValidUuidMessage)
+          ->atPath($item->getFieldDefinition()->getName())
+          ->addViolation();
+      }
 
-            if (!$uuid) {
-                $this->context->buildViolation($constraint->notValidUuidMessage)
-                    ->atPath($item->getFieldDefinition()->getName())
-                    ->addViolation();
-            }
-
-//            if (!empty($item->value) && !preg_match('/^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i', $item->value)) {
-//                $this->context->buildViolation($constraint->notValidUuidMessage)
-//                    ->atPath($item->getFieldDefinition()->getName())
-//                    ->addViolation();
-//            }
-        }
+      // If (!empty($item->value) && !preg_match('/^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i', $item->value)) {
+      //      $this->context->buildViolation($constraint->notValidUuidMessage)
+      //        ->atPath($item->getFieldDefinition()->getName())
+      //        ->addViolation();
+      //     }
     }
+  }
+
 }

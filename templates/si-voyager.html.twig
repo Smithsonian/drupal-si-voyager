@@ -5,11 +5,18 @@
  *
  * Available variables:
  * - si_voyager_id: (string) ID of the scan.
-    * - no_thumbnail_url: (string) URL of the thumbnail.
+ * - scene_image: (string) URL of the scene image.
+ * - attributes: (array) HTML attributes for the wrapper element.
+ * - component_attributes: (array) HTML attributes for the Web Component.
  */
 #}
-
-{% if scene_image %}
-    <img width="200" height="200" class="no_thumbnail" src="{{ scene_image }}" alt="3D Scene Image Placeholder" />
+{% if si_voyager_id %}
+  <div class="si-voyager-explorer-wrapper">
+    {% if scene_image %}
+      <img width="200" height="200" class="no_thumbnail" src="{{ scene_image }}" alt="3D Scene Image Placeholder" />
+    {% endif %}
+    <div {{ attributes }}>
+      <voyager-explorer{{ component_attributes }}></voyager-explorer>
+    </div>
+  </div>
 {% endif %}
-<div data-3d="{{ si_voyager_id }}" id="voyager__wrapper-{{ si_voyager_id }}" class="voyager-explorer"></div>

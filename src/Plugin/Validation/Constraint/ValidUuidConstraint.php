@@ -15,5 +15,7 @@ use Symfony\Component\Validator\Constraint;
  * )
  */
 class ValidUuidConstraint extends Constraint {
-    public $notValidUuidMessage = 'The URL must contain a valid UUID.';
+
+  public $notValidUuidMessage = 'The URL must contain a valid UUID.';
+
 }
