@@ -1,7 +1,7 @@
 {
   "name": "smithsonian/si_voyager",
   "version": "1.0.8",
-  "type": "drupal-contrib-module",
+  "type": "drupal-module",
   "require": {
     "composer/installers": "^1.2",
     "php": "^8.1"
